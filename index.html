@@ -597,7 +597,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">Me</a>
+        Designed by <a href="https://github.com/Roberamelaek">Me</a>
       </div>
     </div>
   </footer><!-- End  Footer -->
@@ -614,46 +614,6 @@
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-
-<h1>Todo List</h1>
-
-<ul id="todo-list"></ul>
-
-<script>
-    // Fetch the JSON file
-    fetch('https://pomolist.pythonanywhere.com/todo/todos/')
-        .then(response => response.json())
-        .then(data => {
-            // Get the todo list from the JSON data
-            const todos = data.todos;
-
-            // Get the todo list container
-            const todoList = document.getElementById('todo-list');
-
-            // Loop through the todos and create list items
-            todos.forEach(todo => {
-                const listItem = document.createElement('li');
-
-                // Check if the todo is checked or not
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.checked = todo.title.includes('[x]');
-
-                // Display the todo title and description
-                const todoText = document.createTextNode(todo.title + ' - ' + todo.description);
-
-                listItem.appendChild(checkbox);
-                listItem.appendChild(todoText);
-                todoList.appendChild(listItem);
-            });
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-</script>
-
   
 </body>
 
